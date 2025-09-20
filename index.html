@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="th">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -63,8 +63,8 @@
         
         .content-section {
             display: none;
-            min-height: calc(100vh - 80px); /* Adjust based on header height */
-            padding-bottom: 20px; /* Add some space at the bottom */
+            min-height: calc(100vh - 80px);
+            padding-bottom: 20px;
         }
 
         .content-section.active {
@@ -129,6 +129,19 @@
             color: #000;
             font-size: 0.95em;
             font-weight: bold;
+        }
+        
+        /* Promotion-specific styling */
+        .product.promotional .original-price {
+            text-decoration: line-through;
+            color: #888;
+            font-size: 0.8em;
+            font-weight: normal;
+        }
+
+        .product.promotional .promo-price {
+            color: #dc3545;
+            font-size: 1.1em;
         }
 
         .button {
@@ -306,7 +319,8 @@
         <a href="#" data-section="home">Home</a>
         <a href="#" data-section="categories">Categories</a>
         <a href="#" data-section="promotions">Promotions</a>
-        <a href="#" data-section="services">Services</a> <a href="#" data-section="about">About Us</a>
+        <a href="#" data-section="services">Services</a>
+        <a href="#" data-section="about">About Us</a>
         <a href="#" data-section="contact">Contact Us</a>
     </div>
 
@@ -373,38 +387,43 @@
                     <button class="button">Order</button>
                 </div>
                 
-                <div class="product">
+                <div class="product promotional">
                     <img src="https://github.com/narangsit05/HAF-CNX/blob/main/Hash%20120%20b.jpg?raw=true">
                     <h3>Hash</h3>
-                    <p>Price : 120 Bath</p>
+                    <p class="original-price">Price : 120 Bath</p>
+                    <p class="promo-price">Special Offer: 3 grams for 200 Bath</p>
                     <button class="button">Order</button>
                 </div>
                 
-                <div class="product">
+                <div class="product promotional">
                     <img src="https://github.com/narangsit05/HAF-CNX/blob/main/Forbidden%20100%20b.jpg?raw=true">
                     <h3>Forbidden</h3>
-                    <p>Price : 100 Bath</p>
+                    <p class="original-price">Price : 100 Bath</p>
+                    <p class="promo-price">Special Offer: 3 grams for 200 Bath</p>
                     <button class="button">Order</button>
                 </div>
                 
-                <div class="product">
+                <div class="product promotional">
                     <img src="https://github.com/narangsit05/HAF-CNX/blob/main/Grape%20ape%20100.jpg?raw=true">
                     <h3>Grape Ape</h3>
-                    <p>Price : 100 Bath</p>
+                    <p class="original-price">Price : 100 Bath</p>
+                    <p class="promo-price">Special Offer: 3 grams for 200 Bath</p>
                     <button class="button">Order</button>
                 </div>
                 
-                <div class="product">
+                <div class="product promotional">
                     <img src="https://github.com/narangsit05/HAF-CNX/blob/main/Gorilla%20zkittez%20100%20b.jpg?raw=true">
                     <h3>Gorilla Zkittez</h3>
-                    <p>Price : 100 Bath</p>
+                    <p class="original-price">Price : 100 Bath</p>
+                    <p class="promo-price">Special Offer: 3 grams for 200 Bath</p>
                     <button class="button">Order</button>
                 </div>
                 
-                <div class="product">
+                <div class="product promotional">
                     <img src="https://github.com/narangsit05/HAF-CNX/blob/main/Godfather%20og%20100%20b.jpg?raw=true">
                     <h3>Godfather OG</h3>
-                    <p>Price : 100 Bath</p>
+                    <p class="original-price">Price : 100 Bath</p>
+                    <p class="promo-price">Special Offer: 3 grams for 200 Bath</p>
                     <button class="button">Order</button>
                 </div>
                 
@@ -447,14 +466,18 @@
                 <p>Check out our special monthly promotions and discounts!</p>
             </div>
             <div class="info-box">
-                <p>Get a **10% discount** on your first order, or enjoy special pricing when you buy two or more items.</p>
+                <p>
+                    **Special Offer: Flower**<br>
+                    **100 Baht strains:** 3 grams for only 200 Baht.<br>
+                    **200 Baht strains:** 3 grams for only 500 Baht.
+                </p>
             </div>
         </div>
         
         <div id="services" class="content-section">
             <div class="header">
                 <h1>Services</h1>
-                <p>Welcome to HAF cannabis, a place to relax, chill, talk, and enjoy art. We have a bar counter for you to take a break, with drinks and free Wi-Fi. You can also get tattooed by our professional artists. We are happy to serve you all. See you soon!</p>
+                <p>Welcome to HAF cannabis, a place to relax, chill, talk, and enjoy art. We have a bar counter for you to take a break, with cold drinks and free Wi-Fi. You can also get tattooed by our professional artists. We are happy to serve you all. See you soon!</p>
             </div>
         </div>
 
@@ -474,7 +497,7 @@
                 <p>Get in touch with us for more information or to place an order.</p>
             </div>
             <div class="info-box">
-                <p>You can contact us via **Line: @097bvksg** or **Phone: 098-923-3025**. We are open daily from 09:30 AM to 04:00 AM.</p>
+                <p>You can contact us via **Line: @hafcnx** or **Phone: 099-123-4567**. We are open daily from 10:00 AM to 10:00 PM.</p>
             </div>
         </div>
     </div>
