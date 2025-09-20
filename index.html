@@ -63,6 +63,8 @@
         
         .content-section {
             display: none;
+            min-height: calc(100vh - 80px); /* Adjust based on header height */
+            padding-bottom: 20px; /* Add some space at the bottom */
         }
 
         .content-section.active {
@@ -124,8 +126,9 @@
         }
 
         .product p {
-            color: #000000;
+            color: #000;
             font-size: 0.95em;
+            font-weight: bold;
         }
 
         .button {
@@ -212,6 +215,18 @@
             background-color: #c82333;
         }
 
+        /* ----- Info Box for Other Sections ----- */
+        .info-box {
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px auto;
+            max-width: 800px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            text-align: center;
+            color: #333;
+        }
+
         /* ----- Mobile Responsiveness ----- */
         @media (max-width: 768px) {
             body {
@@ -291,7 +306,7 @@
         <a href="#" data-section="home">Home</a>
         <a href="#" data-section="categories">Categories</a>
         <a href="#" data-section="promotions">Promotions</a>
-        <a href="#" data-section="about">About Us</a>
+        <a href="#" data-section="services">Services</a> <a href="#" data-section="about">About Us</a>
         <a href="#" data-section="contact">Contact Us</a>
     </div>
 
@@ -422,7 +437,7 @@
                 <p>Explore our products by category to find exactly what you're looking for.</p>
             </div>
             <div class="info-box">
-                <p>Our products are divided into these main categories: Flower (Sativa, Indica, Hybrid), Dab, Hash, Kief, and accessories like Grinders and Raw Papers.</p>
+                <p>Our products are divided into these main categories: **Flower** (Sativa, Indica, Hybrid), **Dab**, **Hash**, **Kief**, and **Accessories** like Grinders and Raw Papers.</p>
             </div>
         </div>
 
@@ -433,6 +448,13 @@
             </div>
             <div class="info-box">
                 <p>Get a **10% discount** on your first order, or enjoy special pricing when you buy two or more items.</p>
+            </div>
+        </div>
+        
+        <div id="services" class="content-section">
+            <div class="header">
+                <h1>Services</h1>
+                <p>Welcome to HAF cannabis, a place to relax, chill, talk, and enjoy art. We have a bar counter for you to take a break, with cold drinks and free Wi-Fi. You can also get tattooed by our professional artists. We are happy to serve you all. See you soon!</p>
             </div>
         </div>
 
@@ -455,7 +477,6 @@
                 <p>You can contact us via **Line: @hafcnx** or **Phone: 099-123-4567**. We are open daily from 10:00 AM to 10:00 PM.</p>
             </div>
         </div>
-
     </div>
 
     <script>
