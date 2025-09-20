@@ -17,7 +17,7 @@
             background-position: center center;
             background-color: #f4f4f4;
             display: flex;
-            overflow: hidden; /* โค้ดที่เพิ่ม: ปิดการเลื่อนของหน้าจอหลัก */
+            overflow: hidden; /* **โค้ดที่เพิ่ม: ปิดการเลื่อนของหน้าจอหลัก** */
         }
 
         .sidebar {
@@ -55,8 +55,8 @@
         .main-content {
             margin-left: 220px;
             width: calc(100% - 220px);
-            overflow-y: auto; /* โค้ดที่เพิ่ม: อนุญาตให้เลื่อนเฉพาะส่วนนี้ */
-            height: 100vh; /* โค้ดที่เพิ่ม: กำหนดความสูงให้เต็มหน้าจอ */
+            overflow-y: auto; /* **โค้ดที่เพิ่ม: อนุญาตให้เลื่อนเฉพาะส่วนนี้** */
+            height: 100vh; /* **โค้ดที่เพิ่ม: กำหนดความสูงให้เต็มหน้าจอ** */
         }
 
         .header {
@@ -268,10 +268,10 @@
 
     <div id="ageVerificationPopup" class="popup-overlay">
         <div class="popup-content">
-            <h2>กรุณายืนยันอายุของคุณ</h2>
-            <p>คุณต้องมีอายุ 18 ปีขึ้นไปจึงจะสามารถเข้าชมเว็บไซต์นี้ได้</p>
-            <button id="confirmAgeBtn" class="confirm-btn">ฉันมีอายุ 18 ปีขึ้นไป</button>
-            <button id="declineAgeBtn" class="decline-btn">ฉันอายุไม่ถึง 18 ปี</button>
+            <h2>Age Verification</h2>
+            <p>You must be 18 years or older to access this website.</p>
+            <button id="confirmAgeBtn" class="confirm-btn">I am 18 or older</button>
+            <button id="declineAgeBtn" class="decline-btn">I am not 18 yet</button>
         </div>
     </div>
 
@@ -422,7 +422,7 @@
 
             declineBtn.addEventListener('click', () => {
                 // แจ้งเตือนและนำผู้ใช้ไปยังหน้าอื่น
-                alert('คุณไม่สามารถเข้าชมเว็บไซต์นี้ได้เนื่องจากอายุไม่ถึงเกณฑ์ที่กำหนด');
+                alert('You are not old enough to enter this website.');
                 window.location.href = 'https://www.google.com'; // เปลี่ยน URL ที่นี่
             });
         });
