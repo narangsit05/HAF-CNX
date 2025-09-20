@@ -17,9 +17,10 @@
             background-position: center center;
             background-color: #f4f4f4;
             display: flex;
-            overflow: hidden; /* **โค้ดที่เพิ่ม: ปิดการเลื่อนของหน้าจอหลัก** */
+            overflow: hidden;
         }
 
+        /* ----- Sidebar & Main Content ----- */
         .sidebar {
             width: 220px;
             background-color: rgba(0, 0, 0, 0.7);
@@ -30,8 +31,9 @@
             left: 0;
             padding-top: 20px;
             box-shadow: 2px 0 8px rgba(0,0,0,0.1);
+            overflow-y: auto;
         }
-
+        
         .sidebar h2 {
             text-align: center;
             margin-bottom: 30px;
@@ -55,10 +57,19 @@
         .main-content {
             margin-left: 220px;
             width: calc(100% - 220px);
-            overflow-y: auto; /* **โค้ดที่เพิ่ม: อนุญาตให้เลื่อนเฉพาะส่วนนี้** */
-            height: 100vh; /* **โค้ดที่เพิ่ม: กำหนดความสูงให้เต็มหน้าจอ** */
+            overflow-y: auto;
+            height: 100vh;
+        }
+        
+        .content-section {
+            display: none;
         }
 
+        .content-section.active {
+            display: block;
+        }
+
+        /* ----- Header & Product Display ----- */
         .header {
             background-color: rgba(0, 0, 0, 0.7);
             color: white;
@@ -84,7 +95,7 @@
         }
 
         .product {
-            background-color: rgba(255, 255, 255, 0.5);;
+            background-color: rgba(255, 255, 255, 0.5);
             border-radius: 10px;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
             width: 250px;
@@ -133,7 +144,7 @@
             background-color: #0056b3;
         }
 
-        /* CSS สำหรับหน้าต่างป๊อปอัพ */
+        /* ----- Popup CSS ----- */
         .popup-overlay {
             position: fixed;
             top: 0;
@@ -186,7 +197,7 @@
         }
         
         .confirm-btn {
-            background-color: #28a745; /* สีเขียวสำหรับปุ่มยืนยัน */
+            background-color: #28a745;
         }
         
         .confirm-btn:hover {
@@ -194,14 +205,14 @@
         }
         
         .decline-btn {
-            background-color: #dc3545; /* สีแดงสำหรับปุ่มปฏิเสธ */
+            background-color: #dc3545;
         }
         
         .decline-btn:hover {
             background-color: #c82333;
         }
 
-        /* โค้ดสำหรับมือถือที่เพิ่มเข้ามาใหม่ */
+        /* ----- Mobile Responsiveness ----- */
         @media (max-width: 768px) {
             body {
                 flex-direction: column;
@@ -235,8 +246,8 @@
                 margin-left: 0;
                 width: 100%;
                 padding-top: 20px;
-                height: auto; /* แก้ไข: ให้ปรับความสูงตามเนื้อหาบนมือถือ */
-                overflow-y: unset; /* แก้ไข: ให้การเลื่อนกลับเป็นปกติบนมือถือ */
+                height: auto;
+                overflow-y: unset;
             }
 
             .header {
@@ -277,131 +288,174 @@
 
     <div class="sidebar">
         <h2>HAF</h2>
-        <a href="#">Home</a>
-        <a href="#">Categories</a>
-        <a href="#">Promotions</a>
-        <a href="#">About Us</a>
-        <a href="#">Contact Us</a>
+        <a href="#" data-section="home">Home</a>
+        <a href="#" data-section="categories">Categories</a>
+        <a href="#" data-section="promotions">Promotions</a>
+        <a href="#" data-section="about">About Us</a>
+        <a href="#" data-section="contact">Contact Us</a>
     </div>
 
     <div class="main-content">
-        <div class="header">
-            <h1>HAF cannabis cnx</h1>
+        <div id="home" class="content-section active">
+            <div class="header">
+                <h1>HAF cannabis cnx</h1>
+                <p>Welcome to HAF Cannabis CNX! The leading cannabis shop in Chiang Mai, offering premium products and friendly service. Explore our collection and find your perfect relaxation experience.</p>
+            </div>
+            <div class="product-container">
+                <div class="product">
+                    <img src="https://github.com/narangsit05/HAF-CNX/blob/main/Dab%201000%20b.jpg?raw=true">
+                    <h3>Dab</h3>
+                    <p>Price : 1000 Bath</p>
+                    <button class="button">Order</button>
+                </div>
+                
+                <div class="product">
+                    <img src="https://github.com/narangsit05/HAF-CNX/blob/main/Superboof%20250%20b.jpg?raw=true">
+                    <h3>Super Boof</h3>
+                    <p>Price : 250 Bath</p>
+                    <button class="button">Order</button>
+                </div>
+                
+                <div class="product">
+                    <img src="https://github.com/narangsit05/HAF-CNX/blob/main/Blueglass%20250%20b.jpg?raw=true">
+                    <h3>Blue Glass</h3>
+                    <p>Price : 250 Bath</p>
+                    <button class="button">Order</button>
+                </div>
+                
+                <div class="product">
+                    <img src="https://github.com/narangsit05/HAF-CNX/blob/main/Pink%20Rose%20250%20b.jpg?raw=true">
+                    <h3>Pink Rose</h3>
+                    <p>Price : 250 Bath</p>
+                    <button class="button">Order</button>
+                </div>
+                
+                <div class="product">
+                    <img src="https://github.com/narangsit05/HAF-CNX/blob/main/Gummo%20200%20b.jpg?raw=true">
+                    <h3>Gummo</h3>
+                    <p>Price : 200 Bath</p>
+                    <button class="button">Order</button>
+                </div>
+                
+                <div class="product">
+                    <img src="https://github.com/narangsit05/HAF-CNX/blob/main/Dark%20night%20200%20b.jpg?raw=true">
+                    <h3>Dark Night</h3>
+                    <p>Price : 200 Bath</p>
+                    <button class="button">Order</button>
+                </div>
+                
+                <div class="product">
+                    <img src="https://github.com/narangsit05/HAF-CNX/blob/main/Runtz%20200%20b.jpg?raw=true">
+                    <h3>Runtz</h3>
+                    <p>Price : 200 Bath</p>
+                    <button class="button">Order</button>
+                </div>
+                
+                <div class="product">
+                    <img src="https://github.com/narangsit05/HAF-CNX/blob/main/Banana%20Spilt%20200%20b.jpg?raw=true">
+                    <h3>Banana Spilt</h3>
+                    <p>Price : 200 Bath</p>
+                    <button class="button">Order</button>
+                </div>
+                
+                <div class="product">
+                    <img src="https://github.com/narangsit05/HAF-CNX/blob/main/Hash%20120%20b.jpg?raw=true">
+                    <h3>Hash</h3>
+                    <p>Price : 120 Bath</p>
+                    <button class="button">Order</button>
+                </div>
+                
+                <div class="product">
+                    <img src="https://github.com/narangsit05/HAF-CNX/blob/main/Forbidden%20100%20b.jpg?raw=true">
+                    <h3>Forbidden</h3>
+                    <p>Price : 100 Bath</p>
+                    <button class="button">Order</button>
+                </div>
+                
+                <div class="product">
+                    <img src="https://github.com/narangsit05/HAF-CNX/blob/main/Grape%20ape%20100.jpg?raw=true">
+                    <h3>Grape Ape</h3>
+                    <p>Price : 100 Bath</p>
+                    <button class="button">Order</button>
+                </div>
+                
+                <div class="product">
+                    <img src="https://github.com/narangsit05/HAF-CNX/blob/main/Gorilla%20zkittez%20100%20b.jpg?raw=true">
+                    <h3>Gorilla Zkittez</h3>
+                    <p>Price : 100 Bath</p>
+                    <button class="button">Order</button>
+                </div>
+                
+                <div class="product">
+                    <img src="https://github.com/narangsit05/HAF-CNX/blob/main/Godfather%20og%20100%20b.jpg?raw=true">
+                    <h3>Godfather OG</h3>
+                    <p>Price : 100 Bath</p>
+                    <button class="button">Order</button>
+                </div>
+                
+                <div class="product">
+                    <img src="https://github.com/narangsit05/HAF-CNX/blob/main/kief%2070%20b.jpg?raw=true">
+                    <h3>Kief</h3>
+                    <p>Price : 70 Bath</p>
+                    <button class="button">Order</button>
+                </div>
+                
+                <div class="product">
+                    <img src="https://github.com/narangsit05/HAF-CNX/blob/main/Raw%20paper%2060%20b.jpg?raw=true">
+                    <h3>Raw Paper</h3>
+                    <p>Price : 60 Bath</p>
+                    <button class="button">Order</button>
+                </div>
+                
+                <div class="product">
+                    <img src="https://github.com/narangsit05/HAF-CNX/blob/main/Grinder%2060%20b.jpg?raw=true">
+                    <h3>Grinder</h3>
+                    <p>Price : 60 Bath</p>
+                    <button class="button">Order</button>
+                </div>
+            </div>
         </div>
 
-        <div class="product-container">
-            <div class="product">
-                <img src="https://github.com/narangsit05/HAF-CNX/blob/main/Dab%201000%20b.jpg?raw=true">
-                <h3>Dab</h3>
-                <p>Price : 1000 Bath</p>
-                <button class="button">Order</button>
+        <div id="categories" class="content-section">
+            <div class="header">
+                <h1>Categories</h1>
+                <p>Explore our products by category to find exactly what you're looking for.</p>
             </div>
-            
-            <div class="product">
-                <img src="https://github.com/narangsit05/HAF-CNX/blob/main/Superboof%20250%20b.jpg?raw=true">
-                <h3>Super Boof</h3>
-                <p>Price : 250 Bath</p>
-                <button class="button">Order</button>
-            </div>
-            
-            <div class="product">
-                <img src="https://github.com/narangsit05/HAF-CNX/blob/main/Blueglass%20250%20b.jpg?raw=true">
-                <h3>Blue Glass</h3>
-                <p>Price : 250 Bath</p>
-                <button class="button">Order</button>
-            </div>
-            
-            <div class="product">
-                <img src="https://github.com/narangsit05/HAF-CNX/blob/main/Pink%20Rose%20250%20b.jpg?raw=true">
-                <h3>Pink Rose</h3>
-                <p>Price : 250 Bath</p>
-                <button class="button">Order</button>
-            </div>
-            
-            <div class="product">
-                <img src="https://github.com/narangsit05/HAF-CNX/blob/main/Gummo%20200%20b.jpg?raw=true">
-                <h3>Gummo</h3>
-                <p>Price : 200 Bath</p>
-                <button class="button">Order</button>
-            </div>
-            
-            <div class="product">
-                <img src="https://github.com/narangsit05/HAF-CNX/blob/main/Dark%20night%20200%20b.jpg?raw=true">
-                <h3>Dark Night</h3>
-                <p>Price : 200 Bath</p>
-                <button class="button">Order</button>
-            </div>
-            
-            <div class="product">
-                <img src="https://github.com/narangsit05/HAF-CNX/blob/main/Runtz%20200%20b.jpg?raw=true">
-                <h3>Runtz</h3>
-                <p>Price : 200 Bath</p>
-                <button class="button">Order</button>
-            </div>
-            
-            <div class="product">
-                <img src="https://github.com/narangsit05/HAF-CNX/blob/main/Banana%20Spilt%20200%20b.jpg?raw=true">
-                <h3>Banana Spilt</h3>
-                <p>Price : 200 Bath</p>
-                <button class="button">Order</button>
-            </div>
-            
-            <div class="product">
-                <img src="https://github.com/narangsit05/HAF-CNX/blob/main/Hash%20120%20b.jpg?raw=true">
-                <h3>Hash</h3>
-                <p>Price : 120 Bath</p>
-                <button class="button">Order</button>
-            </div>
-            
-            <div class="product">
-                <img src="https://github.com/narangsit05/HAF-CNX/blob/main/Forbidden%20100%20b.jpg?raw=true">
-                <h3>Forbidden</h3>
-                <p>Price : 100 Bath</p>
-                <button class="button">Order</button>
-            </div>
-            
-            <div class="product">
-                <img src="https://github.com/narangsit05/HAF-CNX/blob/main/Grape%20ape%20100.jpg?raw=true">
-                <h3>Grape Ape</h3>
-                <p>Price : 100 Bath</p>
-                <button class="button">Order</button>
-            </div>
-            
-            <div class="product">
-                <img src="https://github.com/narangsit05/HAF-CNX/blob/main/Gorilla%20zkittez%20100%20b.jpg?raw=true">
-                <h3>Gorilla Zkittez</h3>
-                <p>Price : 100 Bath</p>
-                <button class="button">Order</button>
-            </div>
-            
-            <div class="product">
-                <img src="https://github.com/narangsit05/HAF-CNX/blob/main/Godfather%20og%20100%20b.jpg?raw=true">
-                <h3>Godfather OG</h3>
-                <p>Price : 100 Bath</p>
-                <button class="button">Order</button>
-            </div>
-            
-            <div class="product">
-                <img src="https://github.com/narangsit05/HAF-CNX/blob/main/kief%2070%20b.jpg?raw=true">
-                <h3>Kief</h3>
-                <p>Price : 70 Bath</p>
-                <button class="button">Order</button>
-            </div>
-            
-            <div class="product">
-                <img src="https://github.com/narangsit05/HAF-CNX/blob/main/Raw%20paper%2060%20b.jpg?raw=true">
-                <h3>Raw Paper</h3>
-                <p>Price : 60 Bath</p>
-                <button class="button">Order</button>
-            </div>
-            
-            <div class="product">
-                <img src="https://github.com/narangsit05/HAF-CNX/blob/main/Grinder%2060%20b.jpg?raw=true">
-                <h3>Grinder</h3>
-                <p>Price : 60 Bath</p>
-                <button class="button">Order</button>
+            <div class="info-box">
+                <p>Our products are divided into these main categories: Flower (Sativa, Indica, Hybrid), Dab, Hash, Kief, and accessories like Grinders and Raw Papers.</p>
             </div>
         </div>
+
+        <div id="promotions" class="content-section">
+            <div class="header">
+                <h1>Promotions</h1>
+                <p>Check out our special monthly promotions and discounts!</p>
+            </div>
+            <div class="info-box">
+                <p>Get a **10% discount** on your first order, or enjoy special pricing when you buy two or more items.</p>
+            </div>
+        </div>
+
+        <div id="about" class="content-section">
+            <div class="header">
+                <h1>About Us</h1>
+                <p>Learn more about HAF Cannabis CNX and our commitment to quality.</p>
+            </div>
+            <div class="info-box">
+                <p>HAF Cannabis CNX was founded with a passion for cannabis. We prioritize the quality of our products, customer safety, and providing accurate and useful information to everyone.</p>
+            </div>
+        </div>
+
+        <div id="contact" class="content-section">
+            <div class="header">
+                <h1>Contact Us</h1>
+                <p>Get in touch with us for more information or to place an order.</p>
+            </div>
+            <div class="info-box">
+                <p>You can contact us via **Line: @hafcnx** or **Phone: 099-123-4567**. We are open daily from 10:00 AM to 10:00 PM.</p>
+            </div>
+        </div>
+
     </div>
 
     <script>
@@ -409,21 +463,37 @@
             const popup = document.getElementById('ageVerificationPopup');
             const confirmBtn = document.getElementById('confirmAgeBtn');
             const declineBtn = document.getElementById('declineAgeBtn');
+            const navLinks = document.querySelectorAll('.sidebar a');
+            const sections = document.querySelectorAll('.content-section');
 
-            // แสดง popup เมื่อหน้าเว็บโหลดเสร็จ
+            // แสดง popup เมื่อหน้าเว็บโหลด
             popup.style.display = 'flex';
             document.body.style.overflow = 'hidden';
 
             confirmBtn.addEventListener('click', () => {
-                // ซ่อน popup เมื่อผู้ใช้ยืนยันอายุ
+                // ซ่อน popup และเปิดการเลื่อนหน้าเมื่อยืนยันอายุ
                 popup.style.display = 'none';
-                document.body.style.overflow = 'auto'; // เปิดการเลื่อนกลับมา
+                document.body.style.overflow = 'auto';
             });
 
             declineBtn.addEventListener('click', () => {
                 // แจ้งเตือนและนำผู้ใช้ไปยังหน้าอื่น
                 alert('You are not old enough to enter this website.');
-                window.location.href = 'https://www.google.com'; // เปลี่ยน URL ที่นี่
+                window.location.href = 'https://www.google.com';
+            });
+
+            // Handle section switching
+            navLinks.forEach(link => {
+                link.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const targetSection = e.target.dataset.section;
+
+                    sections.forEach(section => {
+                        section.classList.remove('active');
+                    });
+
+                    document.getElementById(targetSection).classList.add('active');
+                });
             });
         });
     </script>
