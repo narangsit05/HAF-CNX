@@ -233,30 +233,39 @@
                 flex-direction: column;
                 background-position: top center;
             }
-
+        
             .sidebar {
                 width: 100%;
                 height: auto;
                 position: relative;
                 box-shadow: none;
                 display: flex;
-                flex-direction: column;
+                /* เปลี่ยนเป็น flex-row สำหรับการแสดงผลแนวนอน */
+                flex-direction: row; 
                 padding-top: 10px;
+                /* จัดเนื้อหาในเมนูให้อยู่ตรงกลางแนวนอน */
+                justify-content: center; 
+                flex-wrap: wrap; /* ให้เมนูขึ้นบรรทัดใหม่ได้ถ้ามีพื้นที่ไม่พอ */
             }
-
+        
             .sidebar h2 {
+                /* ปรับให้โลโก้ HAF แสดงเต็มความกว้างและอยู่ด้านบนเมนู */
                 width: 100%;
                 text-align: center;
                 margin-bottom: 10px;
+                font-size: 1.5em;
             }
-
+        
             .sidebar a {
-                display: block;
+                /* ปรับเมนูให้แสดงผลแบบ inline-block เพื่อให้เรียงกันในแนวนอน */
+                display: inline-block;
                 width: auto;
                 text-align: center;
                 padding: 10px;
+                /* กำหนดระยะห่างระหว่างปุ่มเมนู */
+                margin: 0 5px; 
             }
-
+        
             .main-content {
                 margin-left: 0;
                 width: 100%;
@@ -264,25 +273,25 @@
                 height: auto;
                 overflow-y: unset;
             }
-
+        
             .header {
                 padding: 20px 0;
             }
-
+        
             .header h1 {
                 font-size: 1.5em;
             }
-
+        
             .header p {
                 font-size: 0.9em;
             }
-
+        
             .product-container {
                 flex-direction: column;
                 align-items: center;
                 padding: 10px;
             }
-
+        
             .product {
                 width: 90%;
                 margin: 10px 0;
